@@ -13,14 +13,14 @@ data = pyrtl.WireVector(bitwidth=32, name='data')
 data <<= mem[counter]
 
 # output data
-op = pyrtl.Output(bitwidth=<add your code here>, name='op')
-rs = pyrtl.Output(bitwidth=<add your code here>, name='rs')
-rt = pyrtl.Output(bitwidth=<add your code here>, name='rt')
-rd = pyrtl.Output(bitwidth=<add your code here>, name='rd')
-sh = pyrtl.Output(bitwidth=<add your code here>, name='sh')
-func = pyrtl.Output(bitwidth=<add your code here>, name='func')
-imm = pyrtl.Output(bitwidth=<add your code here>, name='imm')
-addr = pyrtl.Output(bitwidth=<add your code here>, name='addr')
+op = pyrtl.Output(bitwidth=6, name='op')
+rs = pyrtl.Output(bitwidth=5, name='rs')
+rt = pyrtl.Output(bitwidth=5, name='rt')
+rd = pyrtl.Output(bitwidth=5, name='rd')
+sh = pyrtl.Output(bitwidth=5, name='sh')
+func = pyrtl.Output(bitwidth=6, name='func')
+imm = pyrtl.Output(bitwidth=16, name='imm')
+addr = pyrtl.Output(bitwidth=26 , name='addr')
 
 ### ADD YOUR INSTRUCTION DECODE LOGIC HERE ###
 
