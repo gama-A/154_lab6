@@ -24,6 +24,7 @@ addr = pyrtl.Output(bitwidth=26 , name='addr')
 
 ### ADD YOUR INSTRUCTION DECODE LOGIC HERE ###
 
+
 # simulate
 sim_trace = pyrtl.SimulationTrace()
 sim = pyrtl.Simulation(tracer=sim_trace)
