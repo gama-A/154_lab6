@@ -1,3 +1,4 @@
+from cgitb import enable
 import pyrtl
 
 # Register file creation
@@ -17,6 +18,6 @@ alu_out = pyrtl.WireVector(bitwidth=32, name='alu_out')
 
 funct <<= data[0:6]
 sh <<= data[6:10]
-rd <<= data[11:15]
-rt <<= data[16:21]
-rs <<= data[21:25]
+
+data[21:25] = rf[rs]
+data[16:21] = rf[rt]
