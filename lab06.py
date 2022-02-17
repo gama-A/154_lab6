@@ -18,6 +18,6 @@ alu_out = pyrtl.WireVector(bitwidth=32, name='alu_out')
 
 funct <<= data[0:6]
 sh <<= data[6:10]
-
-data[21:25] = rf[rs]
-data[16:21] = rf[rt]
+rs <<= data[21:25]
+rt <<= data[16:21]
+rd <<= data[11:16]
