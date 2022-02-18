@@ -2,7 +2,7 @@ from cgitb import enable
 import pyrtl
 
 # Register file creation
-rf = pyrtl.MemBlock(bitwidth=32, addrwidth=5, name='rf', max_write_ports=1)
+rf = pyrtl.MemBlock(bitwidth=32, addrwidth=5, name='rf', max_read_ports=2, max_write_ports=1)
 
 data = pyrtl.WireVector(bitwidth=32, name='data')
 decoder = pyrtl.RomBlock(bitwidth=32, addrwidth=1, romdata=pyrtl.Input(32,name='instr'))
@@ -26,7 +26,7 @@ rt <<= data[16:21]
 rd <<= data[11:16]
 
 data0 = rf[rs]
-data1 =rf[rt]
+data1 = rf[rt]
 
 with pyrtl.conditional_assignment:
     with funct == 32:
