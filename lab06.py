@@ -41,6 +41,6 @@ with pyrtl.conditional_assignment:
     with funct == 3:
         alu_out |= pyrtl.shift_right_arithmetic(data1, sh)
     with funct == 42:
-        alu_out |= data0 < data1
+        alu_out |= data1 < data0
 
 rf[rd] <<= alu_out
