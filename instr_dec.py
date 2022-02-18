@@ -24,13 +24,13 @@ addr = pyrtl.Output(bitwidth=26 , name='addr')
 
 ### ADD YOUR INSTRUCTION DECODE LOGIC HERE ###
 op <<= data[26:32]
-rs <<= data[21:25]
+rs <<= data[21:26]
 rt <<= data[16:21]
 rd <<= data[11:16]
 sh <<= data[6:11]
 func <<= data[0:6]
-imm <<= data[0:15]
-addr <<= data[0:25]
+imm <<= data[0:16]
+addr <<= data[0:26]
 
 # simulate
 sim_trace = pyrtl.SimulationTrace()
