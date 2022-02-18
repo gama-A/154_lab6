@@ -6,8 +6,9 @@ rf = pyrtl.MemBlock(bitwidth=32, addrwidth=5, name='rf', max_read_ports=2, max_w
 
 data = pyrtl.WireVector(bitwidth=32, name='data')
 decoder = pyrtl.RomBlock(bitwidth=32, addrwidth=1, romdata=pyrtl.Input(32,name='instr'))
+counter = pyrtl.WireVector(bitwidth=32, name='counter')
 
-data = decoder[0]
+data = decoder[counter]
 
 funct = pyrtl.WireVector(bitwidth=6, name='funct')
 sh = pyrtl.WireVector(bitwidth=5, name='sh')
