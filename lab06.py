@@ -27,7 +27,7 @@ with pyrtl.conditional_assignment:
     with funct == 32:
         alu_out |= rf[rs] + rf[rt]
     with funct == 34:
-        alu_out |= rf[rs] - rf[rt]
+        alu_out |= rf[rs] + rf[rt]
     with funct == 36:
         alu_out |= rf[rs] & rf[rt]
     with funct == 37:
