@@ -48,5 +48,5 @@ with pyrtl.conditional_assignment:
     with funct == 42:
         alu_out |= data0 < data1
 
-counter.next << counter + 1
+counter.next <<= counter + 1
 rf[rd] <<= alu_out
