@@ -3,14 +3,7 @@ import pyrtl
 
 # Register file creation
 rf = pyrtl.MemBlock(bitwidth=32, addrwidth=5, name='rf', max_read_ports=2, max_write_ports=1)
-
-data = pyrtl.WireVector(bitwidth=32, name='data')
-decoder = pyrtl.RomBlock(bitwidth=32, addrwidth=1, romdata=pyrtl.Input(32,name='instr'))
-counter = pyrtl.WireVector(bitwidth=1, name='counter')
-
-counter <<= 0
-
-data <<= decoder[counter]
+instr = pyrtl.Input(bitwidth=32, name='instr')
 
 funct = pyrtl.WireVector(bitwidth=6, name='funct')
 sh = pyrtl.WireVector(bitwidth=5, name='sh')
@@ -21,11 +14,11 @@ alu_out = pyrtl.WireVector(bitwidth=32, name='alu_out')
 data0 = pyrtl.WireVector(bitwidth=32, name='data0')
 data1 = pyrtl.WireVector(bitwidth=32, name='data1')
 
-funct <<= data[0:6]
-sh <<= data[6:11]
-rs <<= data[21:26]
-rt <<= data[16:21]
-rd <<= data[11:16]
+funct <<= instr[0:6]
+sh <<= instr[6:11]
+rs <<= instr[21:26]
+rt <<= instr[16:21]
+rd <<= instr[11:16]
 
 data0 <<= rf[rs]
 data1 <<= rf[rt]
