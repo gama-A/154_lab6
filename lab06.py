@@ -8,7 +8,7 @@ data = pyrtl.WireVector(bitwidth=32, name='data')
 decoder = pyrtl.RomBlock(bitwidth=32, addrwidth=1, romdata=pyrtl.Input(32,name='instr'))
 counter = pyrtl.WireVector(bitwidth=1, name='counter')
 
-data = decoder[counter]
+data <<= decoder[counter]
 
 funct = pyrtl.WireVector(bitwidth=6, name='funct')
 sh = pyrtl.WireVector(bitwidth=5, name='sh')
@@ -25,8 +25,8 @@ rs <<= data[21:26]
 rt <<= data[16:21]
 rd <<= data[11:16]
 
-data0 = rf[rs]
-data1 = rf[rt]
+data0 <<= rf[rs]
+data1 <<= rf[rt]
 
 with pyrtl.conditional_assignment:
     with funct == 32:
