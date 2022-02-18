@@ -34,11 +34,11 @@ with pyrtl.conditional_assignment:
     with funct == 38:
         alu_out |= rf[rs] ^ rf[rt]
     with funct == 0:
-        alu_out |= shift_left_logical(rf[rt], sh)
+        alu_out |= pyrtl.shift_left_logical(rf[rt], sh)
     with funct == 2:
-        alu_out |= shift_right_logical(rf[rt], sh)
+        alu_out |= pyrtl.shift_right_logical(rf[rt], sh)
     with funct == 3:
-        alu_out |= shift_right_arithmetic(rf[rt], sh)
+        alu_out |= pyrtl.shift_right_arithmetic(rf[rt], sh)
     with funct == 42:
         alu_out |= rf[rs] < rf[rt]
 
