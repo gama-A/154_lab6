@@ -25,8 +25,8 @@ rs <<= data[21:26]
 rt <<= data[16:21]
 rd <<= data[11:16]
 
-data0 <<= rf[rs]
-data1 <<=rf[rt]
+data0 = rf[rs]
+data1 =rf[rt]
 
 with pyrtl.conditional_assignment:
     with funct == 32:
